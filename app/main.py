@@ -4,15 +4,16 @@ class Distance:
     def __init__(self, km: float | int) -> None:
         self.km: float | int = km
 
+
     @staticmethod
     def _value(other: "float | int | Distance") -> float | int:
         return other.km if isinstance(other, Distance) else other
 
     @staticmethod
-    def _fmt_num(x: float | int) -> str:
-        if isinstance(x, float):
-            return str(int(x)) if x.is_integer() else str(x)
-        return str(x)
+    def _fmt_num(num: float | int) -> str:
+        if isinstance(num, float):
+            return str(int(num)) if num.is_integer() else str(num)
+        return str(num)
 
     def __str__(self) -> str:
         return f"Distance: {self._fmt_num(self.km)} kilometers."
