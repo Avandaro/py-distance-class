@@ -1,9 +1,9 @@
 from __future__ import annotations
 
+
 class Distance:
     def __init__(self, km: float | int) -> None:
         self.km: float | int = km
-
 
     @staticmethod
     def _value(other: "float | int | Distance") -> float | int:
